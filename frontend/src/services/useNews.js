@@ -15,7 +15,9 @@ function useNews() {
 	return useQuery(
 		"news",
 		async () => {
-			const { data } = await axios.get("http://localhost:3001/news");
+			const { data } = await axios.get(
+				process.env.REACT_APP_BACKEND_URL + "/news"
+			);
 			return data.results.map((news) => {
 				return {
 					href: news.url,
