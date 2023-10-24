@@ -1,12 +1,15 @@
 const express = require("express");
 require("dotenv/config");
 
+const cors = require("cors");
+
 // Server Initialization
 const app = express();
 const PORT = 3001;
 
 // Middlewares
 app.use(express.json());
+app.use(cors());
 
 // Routes will be written here
 app.get("/news", (req, res) => {
